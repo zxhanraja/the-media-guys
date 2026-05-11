@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/lib/TranslationContext";
 
@@ -11,7 +12,7 @@ export default function Navbar() {
   const { language, setLanguage, t } = useTranslation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -19,6 +20,7 @@ export default function Navbar() {
   const links = [
     { name: t.nav.about, id: "about" },
     { name: t.nav.services, id: "services" },
+    { name: t.nav.work, id: "our-work" },
     { name: t.nav.projects, id: "projects" },
     { name: t.nav.contact, id: "contact" },
   ];
@@ -27,36 +29,26 @@ export default function Navbar() {
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 w-full z-50 transition-all duration-500",
+          "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out",
           scrolled
-            ? "py-4 bg-background/80 backdrop-blur-lg shadow-sm"
-            : "py-8"
+            ? "py-4 bg-background/90 backdrop-blur-xl"
+            : "py-8 md:py-12 bg-transparent"
         )}
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-8 flex justify-between items-center">
           {/* Logo */}
           <Link
             href="/"
-            className="text-[20px] font-black tracking-tighter text-foreground"
-            style={{ letterSpacing: "-0.04em" }}
+            className="text-[20px] md:text-[24px] font-black tracking-tighter text-foreground uppercase flex items-center gap-1"
           >
-            Crocosites.
+            <span>Orange</span>
+            <span className="text-accent">Studio</span>
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.id}
-                href={`#${link.id}`}
-                className="text-[11px] font-bold tracking-[0.18em] uppercase text-foreground/50 hover:text-foreground transition-colors duration-300"
-              >
-                {link.name}
-              </Link>
-            ))}
-            
-            {/* Language Switcher */}
-            <div className="flex items-center gap-3 ml-4 border-l border-border pl-8">
+          {/* Universal Nav (Hamburger for all screens) */}
+          <div className="flex items-center gap-6">
+            {/* Desktop Language Switcher (Optional - can keep or move to menu) */}
+            <div className="hidden lg:flex items-center gap-4 border-r border-foreground/10 pr-6 mr-2">
               <button 
                 onClick={() => setLanguage("hi")}
                 className={cn(
@@ -66,7 +58,6 @@ export default function Navbar() {
               >
                 Hindi
               </button>
-              <span className="text-foreground/20">|</span>
               <button 
                 onClick={() => setLanguage("en")}
                 className={cn(
@@ -78,35 +69,29 @@ export default function Navbar() {
               </button>
             </div>
 
-            <Link href="#contact" className="btn-outline text-[11px] ml-4 px-6 py-3">
-              {t.nav.letsTalk} →
-            </Link>
-          </div>
-
-          {/* Mobile hamburger & Language */}
-          <div className="flex items-center gap-4 md:hidden">
-            <button 
-              onClick={() => setLanguage(language === "en" ? "hi" : "en")}
-              className="text-[10px] font-black uppercase tracking-widest border border-border px-3 py-1.5 rounded-full"
-            >
-              {language === "en" ? "Hindi" : "EN"}
-            </button>
+            {/* Hamburger Button (Universal) */}
             <button
-              className="flex flex-col gap-1.5 p-2"
+              className="relative w-12 h-12 flex flex-col justify-center items-center gap-1.5 group"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
-              <span className={cn("w-6 h-px bg-foreground block transition-all duration-300", menuOpen && "rotate-45 translate-y-[7px]")} />
-              <span className={cn("w-6 h-px bg-foreground block transition-all duration-300", menuOpen && "opacity-0")} />
-              <span className={cn("w-6 h-px bg-foreground block transition-all duration-300", menuOpen && "-rotate-45 -translate-y-[7px]")} />
+              <span className={cn("w-7 h-[2px] bg-foreground block transition-all duration-500 origin-center", menuOpen && "rotate-45 translate-y-[4px]")} />
+              <span className={cn("w-7 h-[2px] bg-foreground block transition-all duration-500", menuOpen && "opacity-0")} />
+              <span className={cn("w-7 h-[2px] bg-foreground block transition-all duration-500 origin-center", menuOpen && "-rotate-45 -translate-y-[4px]")} />
+              
+              {/* Optional label for desktop */}
+              <span className="absolute -left-12 text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+                {menuOpen ? "Close" : "Menu"}
+              </span>
             </button>
           </div>
+
+
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-background transition-all duration-500 ease-[expo.inOut] flex flex-col justify-center items-center gap-8",
+        "fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] flex flex-col justify-center items-center gap-6",
         menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       )}>
         {links.map((link) => (

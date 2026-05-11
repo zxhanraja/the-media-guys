@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 
 interface LoaderProps {
   onComplete: () => void;
@@ -33,7 +34,7 @@ export default function Loader({ onComplete }: LoaderProps) {
     if (!loader || !dot || !textEl) return;
 
     const ctx = gsap.context(() => {
-      const letters = Array.from(textEl.querySelectorAll<HTMLElement>(".croco-letter"));
+      const title = textEl.querySelector(".loader-title");
       const particles = particleRefs.current.filter(Boolean) as HTMLDivElement[];
 
       // Initial states
@@ -44,7 +45,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         scaleY: 1, 
         opacity: 1 
       });
-      gsap.set(letters, { y: 40, opacity: 0 });
+      gsap.set(title, { y: 20, opacity: 0 });
       gsap.set(textEl, { opacity: 0 });
       gsap.set(particles, { x: 0, y: 0, opacity: 0, scale: 1 });
 
@@ -104,10 +105,9 @@ export default function Loader({ onComplete }: LoaderProps) {
 
       // 4 — Text reveals in center
       .set(textEl, { opacity: 1 }, "-=0.1")
-      .to(letters, {
+      .to(title, {
         y: 0,
         opacity: 1,
-        stagger: 0.03,
         duration: 0.6,
         ease: "power4.out",
       }, "<")
@@ -151,7 +151,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         inset: 0,
         width: "100vw",
         height: "100vh",
-        backgroundColor: "#F5F4F0",
+        backgroundColor: "#F2741F",
         zIndex: 9999,
         overflow: "hidden",
       }}
@@ -168,13 +168,13 @@ export default function Loader({ onComplete }: LoaderProps) {
           fontWeight: 700,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: "#0D0D0D",
-          opacity: 0.4,
+          color: "#FFFFFF",
+          opacity: 0.6,
           background: "transparent",
           border: "none",
           cursor: "pointer",
           zIndex: 10000,
-          fontFamily: "var(--font-inter), sans-serif",
+          fontFamily: "var(--font-plus-jakarta), sans-serif",
         }}
       >
         Skip →
@@ -200,7 +200,7 @@ export default function Loader({ onComplete }: LoaderProps) {
             height: 24,
             marginLeft: -12,
             borderRadius: "50%",
-            backgroundColor: "#0D0D0D",
+            backgroundColor: "#FFFFFF",
             transformOrigin: "center bottom",
           }}
         />
@@ -217,7 +217,7 @@ export default function Loader({ onComplete }: LoaderProps) {
               height: i % 2 === 0 ? 8 : 6,
               marginLeft: -4,
               borderRadius: "50%",
-              backgroundColor: "#0D0D0D",
+              backgroundColor: "#FFFFFF",
               transformOrigin: "center center",
               opacity: 0,
             }}
@@ -238,25 +238,38 @@ export default function Loader({ onComplete }: LoaderProps) {
           }}
         >
           <span
+            className="loader-title"
             style={{
               display: "inline-flex",
-              fontSize: "clamp(3rem, 8vw, 6rem)",
-              fontWeight: 900,
-              letterSpacing: "-0.05em",
-              color: "#0D0D0D",
-              fontFamily: "var(--font-inter), sans-serif",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "0.5rem",
+              color: "#FFFFFF",
+              fontFamily: "var(--font-plus-jakarta), sans-serif",
               lineHeight: 1,
             }}
           >
-            {text.split("").map((char, i) => (
-              <span
-                key={i}
-                className="croco-letter"
-                style={{ display: "inline-block", whiteSpace: "pre" }}
-              >
-                {char}
-              </span>
-            ))}
+            <span
+              style={{
+                fontSize: "clamp(2rem, 6vw, 4rem)",
+                fontWeight: 900,
+                letterSpacing: "-0.04em",
+                textTransform: "uppercase",
+              }}
+            >
+              Orange Studio
+            </span>
+            <span
+              style={{
+                fontSize: "clamp(0.8rem, 2vw, 1.2rem)",
+                fontWeight: 500,
+                letterSpacing: "0.4em",
+                textTransform: "uppercase",
+                opacity: 0.8,
+              }}
+            >
+              Marketing
+            </span>
           </span>
         </div>
       </div>

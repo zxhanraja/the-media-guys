@@ -7,9 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: 40, suffix: "+", label: "Projects Delivered" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 5, suffix: "★", label: "Average Rating" },
+  { value: 150, suffix: "+", label: "Campaigns Managed" },
+  { value: 92, suffix: "%", label: "Average ROI Increase" },
+  { value: 50, suffix: "+", label: "Partner Brands" },
 ];
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -79,8 +79,8 @@ export default function Stats() {
         <div className="overflow-hidden mb-32 border-b border-border pb-12 stat-ticker">
           <div className="flex">
             <div className="marquee-track">
-              {["Premium Design", "Next.js Dev", "Swiss Style", "GSAP Animations", "High Performance", "Custom Builds", "Fast Delivery",
-                "Premium Design", "Next.js Dev", "Swiss Style", "GSAP Animations", "High Performance", "Custom Builds", "Fast Delivery"].map((item, i) => (
+              {["Growth Strategy", "Visual Identity", "Digital Campaigns", "ROI Driven", "Brand Scaling", "Creative Content", "Market Analysis",
+                "Growth Strategy", "Visual Identity", "Digital Campaigns", "ROI Driven", "Brand Scaling", "Creative Content", "Market Analysis"].map((item, i) => (
                 <span key={i} className="inline-flex items-center gap-4 text-foreground/10 font-bold uppercase tracking-widest text-sm">
                   {item} <span className="text-foreground/20 text-lg">✦</span>
                 </span>

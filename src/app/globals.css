@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
-/* ─── Design Tokens (Forced Light) ─── */
+/* ─── Design Tokens (Orange Studio Marketing - Orange & White) ─── */
 :root {
-  --background: #F5F4F0;
-  --foreground: #0D0D0D;
-  --accent: #000000;
-  --muted: #E5E4E0;
-  --border: #D1D0CC;
+  --background: #FFFFFF;
+  --foreground: #111111;
+  --accent: #F2741F;
+  --accent-foreground: #FFFFFF;
+  --muted: #F8F8F8;
+  --border: #EEEEEE;
   --card: #FFFFFF;
 }
 
@@ -17,7 +18,7 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-card: var(--card);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-plus-jakarta);
 }
 
 /* ─── Reset ─── */
@@ -33,38 +34,35 @@ html {
 body {
   background-color: var(--background) !important;
   color: var(--foreground) !important;
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif;
   overflow-x: hidden;
   cursor: none;
   -webkit-font-smoothing: antialiased;
   margin: 0;
 }
 
-/* ─── Custom Cursor (Swiss Crosshair Shader) ─── */
+/* ─── Custom Cursor ─── */
 .custom-cursor {
   position: fixed;
   top: 0; left: 0;
   width: 14px; height: 14px;
-  background: var(--foreground);
+  background: var(--accent);
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  clip-path: polygon(
-    0% 45%, 45% 45%, 45% 0%, 55% 0%, 55% 45%, 100% 45%, 
-    100% 55%, 55% 55%, 55% 100%, 45% 100%, 45% 55%, 0% 55%
-  ); /* Crosshair Shape */
+  clip-path: circle(50% at 50% 50%);
 }
 
 .custom-cursor-outline {
   position: fixed;
   top: 0; left: 0;
   width: 44px; height: 44px;
-  border: 1px solid rgba(13,13,13,0.3);
+  border: 1px solid var(--accent);
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  backdrop-filter: brightness(0.8) contrast(1.2) grayscale(1); /* Strong Dark Shader */
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 50%;
+  transition: transform 0.1s ease-out;
 }
 
 /* ─── Typography ─── */
@@ -128,17 +126,17 @@ body {
 }
 
 .btn-outline:hover {
-  background: var(--foreground);
-  color: var(--background);
-  border-color: var(--foreground);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
 }
 
 .btn-accent {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--accent);
+  color: var(--accent-foreground);
   padding: 0.85rem 2rem;
   border-radius: 9999px;
   font-weight: 700;
@@ -151,6 +149,7 @@ body {
 
 .btn-accent:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px var(--accent);
   opacity: 0.9;
 }
 
@@ -169,9 +168,9 @@ body {
 }
 
 .pill-button:hover {
-  background: var(--foreground);
-  color: var(--background);
-  border-color: var(--foreground);
+  background: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
 }
 
 /* ─── Cards ─── */

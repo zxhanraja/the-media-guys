@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, DM_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
 });
 
@@ -14,11 +14,12 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Crocosites | Premium Web Agency",
-  description: "Specializing in High-End Design, UI/UX, Webflow, and Front-End Development.",
+  title: "Orange Studio | Premium Marketing Agency",
+  description: "Specializing in High-Impact Visual Identity, Growth Strategy, and Digital Campaigns.",
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/images/orangestudiologo.webp",
+    shortcut: "/images/orangestudiologo.webp",
+    apple: "/images/orangestudiologo.webp",
   },
 };
 
@@ -30,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${plusJakarta.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         <TranslationProvider>
           <SmoothScroll>

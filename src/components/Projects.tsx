@@ -58,6 +58,9 @@ export default function Projects() {
     { num: "03", title: t.projects.p3.title, category: t.projects.p3.category, image: "/images/p3.webp" },
     { num: "04", title: t.projects.p4.title, category: t.projects.p4.category, image: "/images/p4.webp" },
     { num: "05", title: t.projects.p5.title, category: t.projects.p5.category, image: "/images/p5.webp" },
+    { num: "06", title: t.projects.p6.title, category: t.projects.p6.category, image: "/images/p6.webp" },
+    { num: "07", title: t.projects.p7.title, category: t.projects.p7.category, image: "/images/p7.webp" },
+    { num: "08", title: t.projects.p8.title, category: t.projects.p8.category, image: "/images/p8.webp" },
   ];
 
   const safeIdx = activeIdx % projectsData.length;
@@ -111,26 +114,29 @@ export default function Projects() {
         
         {/* Header */}
         <div className="flex justify-between items-start mb-24 border-b border-border pb-8 projects-header">
-          <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-foreground/40">
-            {t.projects.label}
-          </p>
+          <div className="flex flex-col gap-2">
+            <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-foreground/40">
+              {t.projects.label}
+            </p>
+            <span className="text-xl md:text-3xl font-black text-foreground uppercase tracking-tighter">
+              Fail {currentProject.num}
+            </span>
+          </div>
           <p className="text-[10px] md:text-xs font-medium text-foreground/30 max-w-[150px] md:max-w-[200px] text-right">
             {t.projects.sublabel}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-20 items-center relative">
           
           {/* Left: Active Project Info */}
-          <div className="md:col-span-1 lg:col-span-5 flex flex-col justify-center project-info">
-            <div className="flex gap-8 items-start">
-              {/* Vertical Project Number - Fixed for mobile */}
-              <span className="text-2xl md:text-4xl font-black text-foreground/10 uppercase tracking-tighter origin-top-left rotate-90 whitespace-nowrap pt-2 translate-x-[20%] md:translate-x-0">
-                Proj. {currentProject.num}
-              </span>
-
+          <div className="md:col-span-1 lg:col-span-6 flex flex-col justify-center project-info z-20">
+            <div className="flex gap-4 md:gap-8 items-start">
               <div className="flex flex-col gap-4 flex-1">
-                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-foreground leading-[0.9] uppercase">
+                <div className="bg-accent/10 text-accent px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest w-fit mb-2">
+                  Marketing BS Detected
+                </div>
+                <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-black tracking-tighter text-foreground leading-[0.85] uppercase">
                   {currentProject.title}
                 </h1>
                 <p className="text-sm md:text-lg text-foreground/40 font-bold uppercase tracking-widest mt-4">
@@ -139,7 +145,7 @@ export default function Projects() {
                 
                 <button 
                   onClick={handleNext}
-                  className="mt-12 text-xs font-black uppercase tracking-[0.3em] border-b-2 border-foreground pb-2 w-fit hover:text-accent hover:border-accent transition-colors"
+                  className="mt-12 text-xs font-black uppercase tracking-[0.3em] border-b-2 border-accent pb-2 w-fit hover:text-foreground hover:border-foreground transition-colors"
                 >
                   {t.projects.next} →
                 </button>
@@ -147,8 +153,8 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Right: Interactive Single Image Display */}
-          <div className="md:col-span-1 lg:col-span-7 flex justify-center lg:justify-end project-image-box">
+          {/* Right: Interactive Funny Quotes Card */}
+          <div className="md:col-span-1 lg:col-span-6 flex justify-center lg:justify-end project-image-box mt-10 lg:mt-0">
             <div 
               className="relative w-full max-w-xl aspect-[16/10] cursor-pointer"
               onClick={handleNext}
@@ -156,6 +162,18 @@ export default function Projects() {
               {projectsData.map((p, i) => {
                 const isFront = i === safeIdx;
                 
+                // Funny marketing quotes based on project index
+                const quotes = [
+                  "\"Budget: $10. Goal: 1 Million followers by Tuesday morning.\"",
+                  "\"Can we make the logo bigger? Like, way bigger? (No pay increase)\"",
+                  "\"We don't need SEO, we just need vibes and pure luck.\"",
+                  "\"Let's just use AI for everything. Even the morning coffee.\"",
+                  "\"Who is our target audience? Everyone. Everyone with a pulse.\"",
+                  "\"We don't have a budget, but this project will give you GREAT exposure!\"",
+                  "\"Can we use a font that looks expensive but also fun? Like gold Comic Sans?\"",
+                  "\"Is it viral yet? I've been refreshing for exactly 2 minutes.\""
+                ];
+
                 return (
                   <div
                     key={i}
@@ -164,14 +182,18 @@ export default function Projects() {
                       zIndex: isFront ? 10 : 0,
                     }}
                   >
-                    <div className="relative w-full h-full rounded-[2rem] overflow-hidden border-2 border-foreground shadow-2xl">
-                      <Image
-                        src={p.image}
-                        alt={p.title}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
+                    <div className="relative w-full h-full rounded-[2rem] bg-accent flex items-center justify-center p-12 text-center border-2 border-foreground shadow-2xl overflow-hidden group">
+                      {/* Decorative background elements */}
+                      <div className="absolute top-[-10%] left-[-10%] w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
+                      <div className="absolute bottom-[-10%] right-[-10%] w-40 h-40 bg-black/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
+                      
+                      <h2 className="text-white text-2xl md:text-4xl font-black italic leading-tight tracking-tight z-10">
+                        {quotes[i]}
+                      </h2>
+                      
+                      <div className="absolute bottom-8 right-10 text-white/40 text-[10px] font-bold uppercase tracking-widest z-10">
+                        — Every Client Ever
+                      </div>
                     </div>
                   </div>
                 );

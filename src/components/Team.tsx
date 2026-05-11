@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const team = [
   {
-    name: "Harshit Patidar",
+    name: "Om Hirawat",
     role: "Founder / Lead Designer",
     funRole: "Professional Coffee Drinker",
     image: "/images/founder.webp",
@@ -28,13 +28,13 @@ export default function Team() {
 
   const teamData = [
     {
-      name: "Harshit Patidar",
+      name: "Om Hirawat",
       role: t.team.m1.role,
       funRole: t.team.m1.funRole,
       image: "/images/founder.webp",
       status: t.team.m1.status,
       funStatus: t.team.m1.funStatus,
-      tools: ["Figma", "Next.js", "GSAP"]
+      tools: ["Meta Ads", "Google Ads", "Content Strategy"]
     },
   ];
 
@@ -119,7 +119,13 @@ export default function Team() {
                     {member.name}
                   </h3>
                   <p className="text-xs md:text-sm text-foreground/40 font-bold uppercase tracking-[0.2em] transition-colors group-hover:text-foreground">
-                    {hoveredMember === i ? member.funRole : member.role}
+                    {hoveredMember === i ? (
+                      member.funRole
+                    ) : (
+                      <>
+                        {member.role.split(" / ")[0]} / <span className="text-accent">{member.role.split(" / ")[1]}</span>
+                      </>
+                    )}
                   </p>
                 </div>
               </div>

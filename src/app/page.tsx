@@ -12,6 +12,7 @@ import Projects from "@/components/Projects";
 import Team from "@/components/Team";
 import Stats from "@/components/Stats";
 import Footer from "@/components/Footer";
+import OurWork from "@/components/OurWork";
 
 // Dynamically import Loader to avoid SSR issues with GSAP
 const Loader = dynamic(() => import("@/components/Loader"), { ssr: false });
@@ -45,6 +46,7 @@ export default function Home() {
         
         <Services />
         <Projects />
+        <OurWork />
         <Team />
         <Footer />
       </div>
