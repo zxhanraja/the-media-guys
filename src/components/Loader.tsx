@@ -151,7 +151,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         inset: 0,
         width: "100vw",
         height: "100vh",
-        backgroundColor: "#F2741F",
+        backgroundColor: "#000000",
         zIndex: 9999,
         overflow: "hidden",
       }}
@@ -257,7 +257,7 @@ export default function Loader({ onComplete }: LoaderProps) {
                 textTransform: "uppercase",
               }}
             >
-              Orange Studio
+              The Media Guys
             </span>
             <span
               style={{

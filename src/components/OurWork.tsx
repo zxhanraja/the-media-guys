@@ -8,31 +8,28 @@ import { cn } from "@/lib/utils";
 gsap.registerPlugin(ScrollTrigger);
 
 const reels = [
-  { id: 1, src: "/reels/reel1.webm", title: "Social Campaign", client: "Brand A" },
-  { id: 2, src: "/reels/reel2.webm", title: "Creative Story", client: "Brand B" },
-  { id: 3, src: "/reels/reel3.webm", title: "Brand Identity", client: "Brand C" },
+  { id: 1, src: "/reels/reel1.mp4", title: "Social Campaign", client: "Brand A" },
+  { id: 2, src: "/reels/reel2.mp4", title: "Creative Story", client: "Brand B" },
+  { id: 3, src: "/reels/reel3.mp4", title: "Brand Identity", client: "Brand C" },
 ];
 
 function ReelCard({ reel, isActive, onVideoEnd }: { reel: typeof reels[0], isActive: boolean, onVideoEnd?: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
 
-  // Auto play/pause based on activity
+  // Keep all videos playing in background, unmuting only the active one
   useEffect(() => {
     if (videoRef.current) {
-      if (isActive) {
-        videoRef.current.play().catch(() => {});
-      } else {
-        videoRef.current.pause();
-      }
+      videoRef.current.muted = !isActive || isMuted;
+      videoRef.current.play().catch(() => {});
     }
-  }, [isActive]);
+  }, [isActive, isMuted]);
 
   const toggleSound = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      const newMuted = !isMuted;
+      setIsMuted(newMuted);
     }
   };
 
@@ -41,7 +38,7 @@ function ReelCard({ reel, isActive, onVideoEnd }: { reel: typeof reels[0], isAct
       className={cn(
         "relative transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] shrink-0",
         "w-[70vw] md:w-[25vw] lg:w-[18vw] max-w-[380px]",
-        isActive ? "z-20 scale-110 opacity-100" : "z-10 scale-90 opacity-20 blur-[2px]"
+        isActive ? "z-20 scale-110 opacity-100" : "z-10 scale-90 opacity-45 blur-[1px]"
       )}
     >
       <div 
@@ -52,8 +49,11 @@ function ReelCard({ reel, isActive, onVideoEnd }: { reel: typeof reels[0], isAct
           src={reel.src}
           className="w-full h-full object-cover"
           onEnded={onVideoEnd}
-          muted={isMuted}
+          muted={!isActive || isMuted}
           playsInline
+          preload="auto"
+          loop={!isActive}
+          autoPlay
         />
         
         {/* Controls Overlay (Only on Active) */}

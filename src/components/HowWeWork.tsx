@@ -65,7 +65,7 @@ export default function HowWeWork() {
       {/* Vertical Swiss Text on Right */}
       <div className="vertical-text absolute right-[-12rem] top-1/2 -translate-y-1/2 pointer-events-none hidden lg:block opacity-10">
         <h2 className="text-[12rem] font-black text-accent uppercase tracking-tighter origin-center rotate-90 whitespace-nowrap">
-          Orange Studio
+          The Media Guys
         </h2>
       </div>
 

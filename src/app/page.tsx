@@ -11,6 +11,7 @@ import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import Team from "@/components/Team";
 import Stats from "@/components/Stats";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import OurWork from "@/components/OurWork";
 
@@ -48,6 +49,7 @@ export default function Home() {
         <Projects />
         <OurWork />
         <Team />
+        <FAQ />
         <Footer />
       </div>
     </main>

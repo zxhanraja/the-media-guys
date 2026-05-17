@@ -14,7 +14,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Orange Studio | Premium Marketing Agency",
+  title: "The Media Guys | Premium Marketing Agency",
   description: "Specializing in High-Impact Visual Identity, Growth Strategy, and Digital Campaigns.",
   icons: {
     icon: "/images/orangestudiologo.webp",

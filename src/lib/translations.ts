@@ -10,8 +10,8 @@ export const translations = {
       letsTalk: "Let's Talk",
     },
     hero: {
-      title1: "Orange",
-      title2: "Studio",
+      title1: "The Media",
+      title2: "Guys",
       description: "Premium Marketing Agency specializing in Visual Identity, Strategy, and Digital Growth.",
       tagline: "We help brands carve their niche through bold strategy and impeccable design.",
       cta: "Drop us a line",
@@ -35,27 +35,27 @@ export const translations = {
       s3: {
         title: "Digital Campaigns",
         desc: "Full-scale digital marketing campaigns that deliver measurable results and high ROI.",
-        funny: "Going viral is luck. Staying relevant is Orange Studio. (We're basically wizards)",
+        funny: "Going viral is luck. Staying relevant is The Media Guys. (We're basically wizards)",
       },
     },
     howWeWork: {
-      title: "My way of getting things done",
-      subtitle: "Fast and transparent, the path to creating a website that will represent your brand in the best light is only 4 weeks away. Standardizing the Webflow methodology, I assure a step-by-step completion of the whole process.",
+      title: "Our way of getting things done",
+      subtitle: "Fast and transparent, the path to creating scroll-stopping content that will represent your brand in the best light. Standardizing the media production methodology, we assure a step-by-step completion of the whole process.",
       step1: {
-        title: "UX / Wireframing",
-        detail: "We dive deep into your brand's DNA to map out user journeys that don't just look good, but convert like crazy. This is where we build the skeleton of your success.",
+        title: "Concept & Scripting",
+        detail: "We dive deep into your brand's DNA to map out video concepts and scripts that don't just look good, but engage like crazy. This is where we build the skeleton of your success.",
       },
       step2: {
-        title: "Strategic Design",
-        detail: "Our design process isn't just about looks. We build visual systems that communicate your value proposition instantly and elegantly.",
+        title: "Pre-Production",
+        detail: "Planning is everything. We organize the shoots, scout locations, prepare the equipment, and set the perfect stage for high-quality visual capture.",
       },
       step3: {
-        title: "Growth Execution",
-        detail: "This is where the magic happens. We deploy cross-channel marketing tactics to put your brand in front of the right eyes at the right time.",
+        title: "Shooting & Execution",
+        detail: "This is where the magic happens. Our team executes the shoot with professional gear, capturing stunning visuals and engaging event coverage.",
       },
       step4: {
-        title: "Analytics Setup / Support",
-        detail: "We don't just launch and leave. We set up data tracking to prove it works, and provide ongoing support so you're never left in the digital dark.",
+        title: "Editing & Post-Production",
+        detail: "We don't just shoot and leave. We meticulously edit, color-grade, and polish the content to make it scroll-stopping and ready to dominate social media.",
       },
     },
     projects: {
@@ -73,8 +73,19 @@ export const translations = {
     },
     footer: {
       letsTalk: "Let's Talk",
-      email: "hello@orangestudio.marketing",
-      copyright: "© 2024 Orange Studio Marketing. All rights reserved.",
+      email: "hello@themediaguys.in",
+      copyright: "© 2024 The Media Guys. All rights reserved.",
+    },
+    faq: {
+      title: "FAQ",
+      q1: "What services do you provide?",
+      a1: "We specialize in reel shoots & editing, promotional videos, social media content creation, Instagram page handling, scriptwriting for ads, and AI-based visual content.",
+      q2: "Who do you mainly work with?",
+      a2: "We partner primarily with local businesses, the education sector, and emerging brands that need high-quality content and robust promotion to stand out online.",
+      q3: "How long does a typical project take?",
+      a3: "The timeline depends on the project scope. However, our standardized workflow ensures transparent communication and rapid delivery, typically ranging from a few days for single shoots to a few weeks for comprehensive campaigns.",
+      q4: "Do you offer ongoing social media management?",
+      a4: "Yes! We handle Instagram pages and execute long-term digital campaigns to keep your brand relevant and growing consistently.",
     },
     team: {
       label: "The Studio",
@@ -103,8 +114,8 @@ export const translations = {
       letsTalk: "बात करें",
     },
     hero: {
-      title1: "ऑरेंज",
-      title2: "स्टूडियो",
+      title1: "द मीडिया",
+      title2: "गाइज़",
       description: "विज़ुअल आइडेंटिटी, रणनीति और डिजिटल विकास में विशेषज्ञता वाली प्रीमियम मार्केटिंग एजेंसी।",
       tagline: "हम ब्रांड्स को साहसिक रणनीति और त्रुटिहीन डिज़ाइन के माध्यम से अपनी पहचान बनाने में मदद करते हैं।",
       cta: "संपर्क करें",
@@ -128,27 +139,27 @@ export const translations = {
       s3: {
         title: "डिजिटल कैंपेन",
         desc: "पूर्ण-स्तरीय डिजिटल मार्केटिंग कैंपेन जो मापने योग्य परिणाम और उच्च ROI प्रदान करते हैं।",
-        funny: "वायरल होना किस्मत है। प्रासंगिक बने रहना ऑरेंज स्टूडियो है।",
+        funny: "वायरल होना किस्मत है। प्रासंगिक बने रहना द मीडिया गाइज़ है।",
       },
     },
     howWeWork: {
-      title: "मेरे काम करने का तरीका",
-      subtitle: "तेज़ और पारदर्शी, एक ऐसी वेबसाइट बनाने का रास्ता जो आपके ब्रांड का सबसे अच्छे तरीके से प्रतिनिधित्व करेगी, केवल 4 सप्ताह दूर है। वेबफ़्लो कार्यप्रणाली को मानकीकृत करते हुए, मैं पूरी प्रक्रिया को चरण-दर-चरण पूरा करने का आश्वासन देता हूँ।",
+      title: "हमारे काम करने का तरीका",
+      subtitle: "तेज़ और पारदर्शी, एक ऐसा कंटेंट बनाने का रास्ता जो आपके ब्रांड का सबसे अच्छे तरीके से प्रतिनिधित्व करेगा। मीडिया प्रोडक्शन कार्यप्रणाली को मानकीकृत करते हुए, हम पूरी प्रक्रिया को चरण-दर-चरण पूरा करने का आश्वासन देते हैं।",
       step1: {
-        title: "UX / वायरफ्रेमिंग",
-        detail: "हम आपके ब्रांड के डीएनए में गहराई से उतरते हैं ताकि उपयोगकर्ता यात्राओं का नक्शा तैयार किया जा सके जो न केवल अच्छे दिखते हैं, बल्कि बहुत अच्छा परिणाम देते हैं। यह वह जगह है जहाँ हम आपकी सफलता का ढांचा बनाते हैं।",
+        title: "कांसेप्ट और स्क्रिप्टिंग",
+        detail: "हम आपके ब्रांड के डीएनए में गहराई से उतरते हैं ताकि ऐसे वीडियो कांसेप्ट और स्क्रिप्ट तैयार किए जा सकें जो न केवल अच्छे दिखें, बल्कि दर्शकों को बांधे रखें।",
       },
       step2: {
-        title: "रणनीतिक डिज़ाइन",
-        detail: "हमारी डिज़ाइन प्रक्रिया केवल लुक्स के बारे में नहीं है। हम विज़ुअल सिस्टम बनाते हैं जो आपके वैल्यू प्रस्ताव को तुरंत और खूबसूरती से संप्रेषित करते हैं।",
+        title: "प्री-प्रोडक्शन",
+        detail: "योजना ही सब कुछ है। हम शूट व्यवस्थित करते हैं, स्थानों की खोज करते हैं, और उच्च गुणवत्ता वाले विज़ुअल कैप्चर के लिए सही मंच तैयार करते हैं।",
       },
       step3: {
-        title: "ग्रोथ निष्पादन",
-        detail: "यहीं जादू होता है। हम आपके ब्रांड को सही समय पर सही आंखों के सामने रखने के लिए क्रॉस-चैनल मार्केटिंग रणनीति तैनात करते हैं।",
+        title: "शूटिंग और निष्पादन",
+        detail: "यहीं जादू होता है। हमारी टीम पेशेवर उपकरणों के साथ शूट को अंजाम देती है, शानदार दृश्य और आकर्षक इवेंट कवरेज कैप्चर करती है।",
       },
       step4: {
-        title: "एनालिटिक्स सेटअप / सपोर्ट",
-        detail: "हमर्फ़ लॉन्च करके नहीं छोड़ते। हम यह साबित करने के लिए डेटा ट्रैकिंग सेट करते हैं कि यह काम करता है, और निरंतर सहायता प्रदान करते हैं ताकि आप कभी भी डिजिटल अंधेरे में न रहें।",
+        title: "एडिटिंग और पोस्ट-प्रोडक्शन",
+        detail: "हम सिर्फ शूट करके नहीं छोड़ते। हम सामग्री को सावधानीपूर्वक संपादित करते हैं, और इसे सोशल मीडिया पर छा जाने के लिए तैयार करते हैं।",
       },
     },
     projects: {
@@ -166,8 +177,19 @@ export const translations = {
     },
     footer: {
       letsTalk: "बात करें",
-      email: "hello@orangestudio.marketing",
-      copyright: "© 2024 ऑरेंज स्टूडियो मार्केटिंग। सर्वाधिकार सुरक्षित।",
+      email: "hello@themediaguys.in",
+      copyright: "© 2024 द मीडिया गाइज़। सर्वाधिकार सुरक्षित।",
+    },
+    faq: {
+      title: "अक्सर पूछे जाने वाले प्रश्न",
+      q1: "आप कौन सी सेवाएँ प्रदान करते हैं?",
+      a1: "हम रील शूट और एडिटिंग, प्रमोशनल वीडियो, सोशल मीडिया कंटेंट क्रिएशन, इंस्टाग्राम पेज हैंडलिंग, विज्ञापनों के लिए स्क्रिप्टिंग और AI-आधारित विज़ुअल कंटेंट में विशेषज्ञ हैं।",
+      q2: "आप मुख्य रूप से किसके साथ काम करते हैं?",
+      a2: "हम मुख्य रूप से स्थानीय व्यवसायों, शिक्षा क्षेत्र और उन ब्रांडों के साथ साझेदारी करते हैं जिन्हें ऑनलाइन अलग दिखने के लिए उच्च-गुणवत्ता वाले कंटेंट और मजबूत प्रचार की आवश्यकता होती है।",
+      q3: "एक विशिष्ट प्रोजेक्ट में कितना समय लगता है?",
+      a3: "समय सीमा प्रोजेक्ट के दायरे पर निर्भर करती है। हालांकि, हमारा मानकीकृत वर्कफ़्लो पारदर्शी संचार और तेज़ डिलीवरी सुनिश्चित करता है।",
+      q4: "क्या आप सोशल मीडिया प्रबंधन सेवाएँ भी देते हैं?",
+      a4: "हाँ! हम आपके ब्रांड को प्रासंगिक बनाए रखने और लगातार बढ़ने में मदद करने के लिए इंस्टाग्राम पेज हैंडल करते हैं और दीर्घकालिक डिजिटल अभियान चलाते हैं।",
     },
     team: {
       label: "स्टूडियो",

@@ -60,12 +60,12 @@ export default function Hero({ startAnimations = true }: HeroProps) {
     <section 
       ref={containerRef} 
       id="home" 
-      className="relative min-h-screen pt-36 md:pt-52 pb-16 md:pb-20 px-6 md:px-8 bg-background flex flex-col justify-between overflow-x-hidden"
+      className="relative min-h-screen pt-24 md:pt-32 pb-8 md:pb-12 px-6 md:px-8 bg-background flex flex-col justify-between overflow-x-hidden"
     >
       <div className="max-w-[1600px] mx-auto w-full relative h-full flex flex-col justify-between flex-1">
         
         {/* Top Headline & Description */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start mb-8 md:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start mb-6 md:mb-10">
           <div className="lg:col-span-9">
             <h1 ref={headlineRef} className="heading-giant text-[clamp(2.2rem,14vw,14rem)] md:text-[clamp(3.5rem,15vw,14rem)] leading-[0.85] tracking-tight text-foreground overflow-hidden">
               <div className="overflow-hidden">{splitText(t.hero.title1)}</div>
@@ -91,7 +91,7 @@ export default function Hero({ startAnimations = true }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end mt-auto">
           {/* Tagline and Button */}
           <div className="lg:col-span-5 hero-info order-2 lg:order-1 mt-6 lg:mt-0">
-            <p className="text-lg md:text-3xl font-normal leading-tight text-foreground/80 mb-6 md:mb-10 max-w-lg">
+            <p className="text-lg md:text-2xl font-normal leading-tight text-foreground/80 mb-4 md:mb-6 max-w-lg">
               {t.hero.tagline}
             </p>
             <Link href="#contact" className="inline-block bg-accent text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-lg shadow-accent/20">

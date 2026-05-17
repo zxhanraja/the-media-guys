@@ -41,8 +41,8 @@ export default function Navbar() {
             href="/"
             className="text-[20px] md:text-[24px] font-black tracking-tighter text-foreground uppercase flex items-center gap-1"
           >
-            <span>Orange</span>
-            <span className="text-accent">Studio</span>
+            <span>The Media</span>
+            <span className="text-accent">Guys</span>
           </Link>
 
           {/* Universal Nav (Hamburger for all screens) */}
