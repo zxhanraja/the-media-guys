@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const team = [
   {
-    name: "Om Hirawat",
+    name: "Kanak",
     role: "Founder / Lead Designer",
     funRole: "Professional Coffee Drinker",
     image: "/images/founder.webp",
@@ -28,7 +28,7 @@ export default function Team() {
 
   const teamData = [
     {
-      name: "Om Hirawat",
+      name: "Kanak",
       role: t.team.m1.role,
       funRole: t.team.m1.funRole,
       image: "/images/founder.webp",
